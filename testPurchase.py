@@ -32,8 +32,9 @@ def step_impl(context):
     ec.visibility_of_element_located((By.CLASS_NAME, "codeInput")))
 
     # OTP is supplied
-    context.browser.implicitly_wait(10)
+    context.browser.implicitly_wait(25)
     context.browser.find_element_by_class_name("codeInput").send_keys(pin)
+    context.browser.implicitly_wait(25)
     context.browser.find_element_by_class_name("main-btn").click()
 
     # Cause web driver to wait for wallet link and compensate for any lag in page load
